@@ -1,19 +1,8 @@
-version: 0.2
 phases:
   install:
-    commands:
-      - echo Nothing to do in the install phase
-  pre_build:
-    commands:
-      - echo Nothing to do in the pre_build phase
+    runtime-versions:
+      java: openjdk8
+
   build:
     commands:
-      - echo build started on 'date'
-      - mvn install
-  post_build:
-    commands:
-      - echo build completed on 'date'
-artifacts:
-  files:
-    - 'target/ccdemo.war'
-Tail logs:
+      - mvn test
