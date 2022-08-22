@@ -1,8 +1,39 @@
 version: 0.2
+
+
+
 phases:
-    build:
-        commands:
-            - npm i --save
+
+  install:
+
+    commands:
+
+      - echo Nothing to do in the install phase
+
+  pre_build:
+
+    commands:
+
+      - echo Nothing to do in the pre_build phase
+
+  build:
+
+    commands:
+
+      - echo build started on 'date'
+
+      - mvn install
+
+  post_build:
+
+    commands:
+
+      - echo build completed on 'date'
+
 artifacts:
-    files:
-        - '**/*'
+
+  files:
+
+    - 'target/ccdemo.war'
+
+Tail logs
