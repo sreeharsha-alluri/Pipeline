@@ -1,8 +1,20 @@
-phases:
-  install:
-    runtime-versions:
-      java: openjdk8
+version: 0.2
 
+
+phases:
   build:
     commands:
-      - mvn test
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - mvn clean package
+  post_build:
+    commands:
+      - echo Build completed successfully
+artifacts:
+  files:
+    - target/car-rentals*/*
+  discard-paths: yes
+
+cache:
+  paths:
+    - '/root/.m2/**/*'
